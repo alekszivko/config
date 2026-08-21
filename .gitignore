@@ -1,0 +1,124 @@
+# =============================================================
+# Defensive .gitignore for a dotfiles / config repo.
+#
+# This repo is public-facing config. The main risk is not the
+# files here today, but the ones added later: shell rc files,
+# CLI tool configs, and editor state routinely carry live
+# credentials. Everything below is ignored by default; use
+# `git add -f <file>` to deliberately commit an exception.
+# =============================================================
+
+# ---- Secrets and credential material ----
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.asc
+*.gpg
+*.kdbx
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+*_rsa
+*_ed25519
+*.ppk
+known_hosts
+authorized_keys
+secrets.*
+*secret*
+*credential*
+*password*
+.netrc
+.pgpass
+.htpasswd
+
+# ---- SSH / GPG / cloud CLI state ----
+.ssh/
+ssh/
+.gnupg/
+gnupg/
+.aws/
+aws/credentials
+.azure/
+.kube/
+kube/config
+.docker/config.json
+.npmrc
+.pypirc
+.terraformrc
+*.tfvars
+*.tfstate
+*.tfstate.*
+
+# ---- CLI tools that store live auth tokens ----
+gh/hosts.yml
+.config/gh/hosts.yml
+op/
+1Password/
+.claude/settings.local.json
+.claude/.credentials.json
+
+# ---- Shell ----
+# NOTE: .zshrc / .bashrc themselves are deliberately NOT ignored — tracking
+# them is the point of a dotfiles repo. Instead, keep every secret out of
+# them and in a sourced side-file that IS ignored below, e.g.:
+#   # in .zshrc:  [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+#   # in ~/.zshrc.local:  export SOME_API_KEY=...
+.zsh_history
+.bash_history
+.zsh_sessions/
+.local_env
+.env.local
+*.local
+!*.local.example
+zsh/local*
+zsh/*.private*
+shell/local*
+**/local.sh
+**/private.sh
+**/*.private
+
+# ---- Editor / tool state (noise, sometimes paths + tokens) ----
+.idea/
+.vscode/
+!.vscode/settings.json
+*.swp
+*.swo
+*~
+.netrwhist
+nvim/lazy-lock.json.bak
+**/plugin/packer_compiled.lua
+**/.luarc.json
+
+# ---- macOS / OS noise ----
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd/
+.AppleDouble
+.LSOverride
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# ---- Logs, caches, backups ----
+*.log
+*.bak
+*.backup
+*.old
+*.orig
+*.rej
+*.tmp
+*.cache
+cache/
+.cache/
+tmp/
