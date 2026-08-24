@@ -1,0 +1,39 @@
+# ~/.Brewfile — managed by chezmoi (source: dot_Brewfile)
+# Installed by run_once_install-packages.sh via `brew bundle`.
+
+# --- Taps -------------------------------------------------------------------
+tap "felixkratz/formulae"     # sketchybar, borders
+tap "nikitabobko/tap"         # aerospace
+
+# --- Shell & CLI everyday ---------------------------------------------------
+brew "chezmoi"
+brew "eza"          # better ls (ll/lt aliases)
+brew "bat"          # better cat
+brew "fd"           # better find
+brew "fzf"          # fuzzy finder (Ctrl-R / Ctrl-T via OMZ plugin)
+brew "jq"
+brew "gh"
+brew "watch"
+brew "sevenzip"
+brew "unar"
+brew "neovim"
+brew "go-task"
+
+# --- Desktop environment ----------------------------------------------------
+brew "sketchybar"
+brew "borders"      # JankyBorders — launched by aerospace
+brew "tpm"          # tmux plugin manager (.tmux.conf sources it)
+
+# --- Casks ------------------------------------------------------------------
+cask "kitty"
+cask "aerospace"
+cask "font-sketchybar-app-font"   # sketchybar app icons (the :kitty: fix)
+# cask "font-jetbrains-mono-nerd-font"   # uncomment if kitty uses a Nerd Font
+
+# --- Machine-specific (NOT installed automatically) --------------------------
+# k8s:        brew "helm", brew "kubernetes-cli"
+# SDR/hw:     brew "dump1090-fa", brew "rtl_433", brew "platformio"
+# reversing:  brew "ghidra", brew "capstone"
+# VMs:        brew "lima"
+# misc:       brew "act", brew "mongosh", brew "xcodes", brew "pandoc",
+#             brew "graphviz", brew "exiftool", brew "ffmpeg", brew "nmap"
