@@ -11,6 +11,7 @@ installs all of it.
 | `dot_zshrc` | `~/.zshrc` | zsh + Oh My Zsh config, plugins, eza aliases |
 | `dot_zprofile` | `~/.zprofile` | login-shell env (Homebrew `shellenv`, PATH) |
 | `dot_tmux.conf` | `~/.tmux.conf` | tmux with tpm, Catppuccin theme, tmux-fzf |
+| `dot_config/tmuxinator/` | `~/.config/tmuxinator/` | tmuxinator project layouts (`tmuxinator start <name>`) |
 | `dot_Brewfile` | `~/.Brewfile` | Homebrew package manifest (`brew bundle`) |
 | `dot_config/kitty/` | `~/.config/kitty/` | kitty terminal (Dracula) |
 | `dot_config/aerospace/` | `~/.config/aerospace/` | AeroSpace tiling WM (launches sketchybar + borders) |

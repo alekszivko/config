@@ -23,6 +23,7 @@ brew "go-task"
 brew "sketchybar"
 brew "borders"      # JankyBorders — launched by aerospace
 brew "tpm"          # tmux plugin manager (.tmux.conf sources it)
+brew "tmuxinator"   # tmux session manager (projects in ~/.config/tmuxinator)
 
 # --- Casks ------------------------------------------------------------------
 cask "kitty"
