@@ -8,6 +8,7 @@ tap "nikitabobko/tap"         # aerospace
 # --- Shell & CLI everyday ---------------------------------------------------
 brew "chezmoi"
 brew "eza"          # better ls (ll/lt aliases)
+brew "betterleaks"  # secrets scanner; required by this repo's pre-commit hook
 brew "bat"          # better cat
 brew "fd"           # better find
 brew "fzf"          # fuzzy finder (Ctrl-R / Ctrl-T via OMZ plugin)

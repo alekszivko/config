@@ -56,6 +56,14 @@ if [ ! -d "$HOME/.nvm" ]; then
     "$(curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh)"
 fi
 
+# --- Git hooks for this dotfiles repo ----------------------------------------
+# Activates .githooks/pre-commit (betterleaks secrets scan). Only needed for
+# committing to the repo, not for using the dotfiles.
+CHEZMOI_SRC="$HOME/.local/share/chezmoi"
+if [ -d "$CHEZMOI_SRC/.git" ] && [ -d "$CHEZMOI_SRC/.githooks" ]; then
+  git -C "$CHEZMOI_SRC" config core.hooksPath .githooks
+fi
+
 # Note: sketchybar and borders are NOT started here — aerospace launches both
 # via after-startup-command in aerospace.toml.
 

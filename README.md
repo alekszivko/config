@@ -18,6 +18,7 @@ installs all of it.
 | `dot_config/sketchybar/` | `~/.config/sketchybar/` | status bar + plugins |
 | `.chezmoiexternal.toml` | — | zsh-autosuggestions & zsh-syntax-highlighting, auto-downloaded weekly |
 | `run_once_install-packages.sh` | — | machine bootstrap, runs once on `chezmoi apply` |
+| `.githooks/` | — | repo pre-commit hook: betterleaks secrets scan (see below) |
 | `keyboard/` | — | Keychron keymap exports (storage only, never applied) |
 
 ## New machine
@@ -67,6 +68,19 @@ chezmoi cd                # enter this repo to commit & push
 
 Rule of thumb: `diff` before `apply`, `re-add` after direct edits,
 push what's worth keeping.
+
+## Committing to this repo
+
+Not required to *install* or *use* the dotfiles — but **committing requires
+[betterleaks](https://betterleaks.com)**: a pre-commit hook scans staged
+changes for leaked credentials and blocks the commit if the scanner is
+missing or finds a secret. The Brewfile installs it and the bootstrap
+activates the hook. If the hook isn't firing (e.g. repo cloned by hand):
+
+```sh
+brew install betterleaks
+git config core.hooksPath .githooks
+```
 
 ## Machine-specific packages
 

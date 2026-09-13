@@ -1,0 +1,10 @@
+#!/bin/sh
+# Pre-commit: scan staged changes for leaked credentials before they enter
+# git history. Blocking on purpose — a secret in a pushed dotfiles repo is
+# public forever.
+if ! command -v betterleaks >/dev/null 2>&1; then
+  echo "pre-commit: betterleaks is not installed, refusing to commit." >&2
+  echo "pre-commit: install it with 'brew install betterleaks' (it's in the Brewfile)." >&2
+  exit 1
+fi
+exec betterleaks git --pre-commit --staged --redact
