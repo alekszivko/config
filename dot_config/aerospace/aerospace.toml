@@ -73,7 +73,11 @@ automatically-unhide-macos-hidden-apps = false
     inner.vertical =   20
     outer.left =       20
     outer.bottom =     20
-    outer.top =        52
+    # Notched display: macOS reserves the top 38pt strip and AeroSpace tiles
+    # below it. Sketchybar (position=top, height=40) draws inside that strip,
+    # ending at 40pt. Window top = 38 + outer.top, so 22 gives a 20px gap
+    # below the bar, matching the other outer gaps.
+    outer.top =        22
     outer.right =      20
 
 # 'main' binding mode declaration
