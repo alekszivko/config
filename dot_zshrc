@@ -100,6 +100,8 @@ export EDITOR='nvim'
 # For a full list of active aliases, run `alias`.
 
 alias ll='eza -la --group-directories-first --icons --git'
+alias la='eza -a --group-directories-first --icons'
+alias l='eza -lah --group-directories-first --icons'
 alias ls='eza'
 
 # Example aliases
