@@ -1,0 +1,19 @@
+{
+  "model": "fable[1m]",
+  "theme": "dark-ansi",
+  "tui": "fullscreen",
+  "permissions": {
+    "deny": [
+      "Read(~/.ssh/**)",
+      "Read(~/.gnupg/**)",
+      "Read(~/.aws/**)",
+      "Read(~/.kube/**)",
+      "Read(~/.netrc)",
+      "Read(~/.config/gh/hosts.yml)",
+      "Bash(cat ~/.ssh/*)",
+      "Bash(cat ~/.aws/*)",
+      "Bash(cat ~/.gnupg/*)",
+      "Bash(cat ~/.netrc)"
+    ]
+  }
+}
